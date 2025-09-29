@@ -43,24 +43,14 @@ export default function AboutUs() {
   };
 
   const teamMembers = [
-    {
-      name: "Tanay Kumar",
-      role: "Co-founder and Technical Head",
-      description: "Former legal tech executive with 15+ years of experience in AI and legal systems.",
-      image: "tanay.jpeg"
-    },
+
     {
       name: "Pranshu Mangale",
       role: "Founder & CEO",
-      description: "AI researcher specializing in natural language processing for legal documents.",
+      description: "Did everything from scratch. Loves to solve problems and build products that make a difference. Passionate about AI and its potential to transform industries. ",
       image: "pranshu.png"
-    },
-    {
-      name: "Neelay Machha",
-      role: "Chief Technology Officer",
-      description: "Tech visionary with expertise in scalable AI systems and Indian legal compliance.",
-      image: "neelay.jpg"
     }
+
   ];
 
   return (
