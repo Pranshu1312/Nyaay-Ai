@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { invokeLegalAgent } from "@/app/lib/legalAgent";
+import { invokeLegalAgent } from "@/src/app/lib/legalAgent";
 import { LRUCache } from 'lru-cache';
 
 const cache = new LRUCache<string, string>({ max: 50, ttl: 1000 * 60 * 5 });

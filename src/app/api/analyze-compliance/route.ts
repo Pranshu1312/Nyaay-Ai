@@ -1,7 +1,7 @@
 // /src/app/api/analyze-compliance/route.ts
 
 import { NextResponse } from "next/server";
-import { analyzeDocumentCompliance } from "@/app/lib/complianceAgent";
+import { analyzeDocumentCompliance } from "@/src/app/lib/complianceAgent"; //C:\Users\Admin\Downloads\nyaay-AI-working\nyaay-AI-working\src\app\lib\complianceAgent.ts
 import mammoth from "mammoth"; // Import the new library
 
 export async function POST(request: Request) {
