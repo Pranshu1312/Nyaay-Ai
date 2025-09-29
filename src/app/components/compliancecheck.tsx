@@ -10,7 +10,7 @@ const ComplianceCheck = ({ items, onCheckCompliance, onViewDetails }: Compliance
     setActiveItem(itemId);
     onCheckCompliance?.(itemId);
     
-    // Simulate API call completion after 2 seconds
+    // Simulate API call completion after 2 seconds vercel
     setTimeout(() => {
       setActiveItem(null);
     }, 2000);
