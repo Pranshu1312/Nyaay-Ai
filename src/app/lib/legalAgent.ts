@@ -4,7 +4,7 @@ import {
   } from "@google/generative-ai";
   
   // Use your working API key.
-  const genAI = new GoogleGenerativeAI("AIzaSyBMP_uZVl2kBslGELotY43w2bYHTt4nFNM");
+ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
   
   export async function invokeLegalAgent(prompt: string): Promise<string> {
     try {
@@ -14,7 +14,7 @@ import {
       };
   
       const model = genAI.getGenerativeModel({
-        model: "gemini-2.0-flash",
+        model: "gemini-1.5-flash-latest", // Use the latest model
         generationConfig,
         // **THE DEFINITIVE FIX: A hyper-aggressive instruction focusing on clean, semantic HTML.**
         systemInstruction: `You are an expert legal document generator. Your only job is to generate a complete, professional, and fully-written HTML document.
