@@ -5,12 +5,20 @@ import { useState } from 'react';
 export default function ContactUs() {
   const [darkMode, setDarkMode] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // State for form data and submission status
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [result, setResult] = useState<string | null>(null);
+
+  // --- Web3Forms Setup ---
+  // IMPORTANT: Go to https://web3forms.com/ and create your own free Access Key.
+  // Replace the placeholder value below with your actual key.
+  const accessKey = "eca749fd-8e20-4fc1-85d4-f9dc9c305344"; 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -19,11 +27,48 @@ export default function ContactUs() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    if (accessKey === "eca749fd-8e20-4fc1-85d4-f9dc9c305344") {
+        setResult("Please replace 'YOUR_ACCESS_KEY_HERE' with your actual key from web3forms.com.");
+        return;
+    }
+
+    setResult("Sending....");
+    const data = new FormData();
+
+    // Append form data and Web3Forms access key
+    Object.entries(formData).forEach(([key, value]) => {
+        data.append(key, value);
+    });
+    data.append("access_key", accessKey);
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: data,
+        });
+
+        const json = await response.json();
+
+        if (json.success) {
+            setResult("Form submitted successfully!");
+            setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        } else {
+            console.error("Submission failed:", json);
+            setResult(json.message || "Something went wrong.");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        setResult("An error occurred while submitting the form.");
+    }
+
+    // Hide the result message after 5 seconds
+    setTimeout(() => {
+        setResult(null);
+    }, 5000);
   };
+
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-800'}`}>
@@ -198,6 +243,9 @@ export default function ContactUs() {
                 >
                   Send Message
                 </button>
+                {result && (
+                  <p className={`text-center mt-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{result}</p>
+                )}
               </form>
             </div>
 
@@ -218,7 +266,7 @@ export default function ContactUs() {
                         </svg>
                       ),
                       title: "Office Address",
-                      details: ["Koramangala, Bangalore - 560034", "Karnataka, India"]
+                      details: ["Mukesh Patel School of Technology Management and Engineering,", "Vile Parle West, Mumbai - 400056"]
                     },
                     {
                       icon: (
@@ -227,7 +275,7 @@ export default function ContactUs() {
                         </svg>
                       ),
                       title: "Phone",
-                      details: ["+91 80123 45678", "+91 80123 45679"]
+                      details: ["+91 70453 13313"]
                     },
                     {
                       icon: (
@@ -236,7 +284,7 @@ export default function ContactUs() {
                         </svg>
                       ),
                       title: "Email",
-                      details: ["hello@nyaayai.com", "support@nyaayai.com"]
+                      details: ["pranshumangale.ijs@gmail.com"]
                     }
                   ].map((contact, index) => (
                     <div key={index} className="flex items-start">
@@ -256,26 +304,6 @@ export default function ContactUs() {
                 </div>
               </div>
 
-              {/* Business Hours */}
-              <div className={`p-8 rounded-xl shadow-lg ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Business Hours
-                </h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>Monday - Friday</span>
-                    <span className="text-indigo-600">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>Saturday</span>
-                    <span className="text-indigo-600">10:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>Sunday</span>
-                    <span className={darkMode ? 'text-gray-400' : 'text-gray-500'}>Closed</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
