@@ -1,6 +1,6 @@
 'use client';
 
-import { ComplianceItem, ComplianceCheckProps } from '../types/compilance';
+import { ComplianceItem, ComplianceCheckProps } from '@/types/compliance';
 import { useState } from 'react';
 
 const ComplianceCheck = ({ items, onCheckCompliance, onViewDetails }: ComplianceCheckProps) => {
