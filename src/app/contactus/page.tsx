@@ -15,9 +15,7 @@ export default function ContactUs() {
   });
   const [result, setResult] = useState<string | null>(null);
 
-  // --- Web3Forms Setup ---
-  // IMPORTANT: Go to https://web3forms.com/ and create your own free Access Key.
-  // Replace the placeholder value below with your actual key.
+  // Your Web3Forms Access Key
   const accessKey = "eca749fd-8e20-4fc1-85d4-f9dc9c305344"; 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,12 +27,8 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (accessKey === "eca749fd-8e20-4fc1-85d4-f9dc9c305344") {
-        setResult("Please replace 'YOUR_ACCESS_KEY_HERE' with your actual key from web3forms.com.");
-        return;
-    }
-
     setResult("Sending....");
+    
     const data = new FormData();
 
     // Append form data and Web3Forms access key
@@ -311,3 +305,4 @@ export default function ContactUs() {
     </div>
   );
 }
+
