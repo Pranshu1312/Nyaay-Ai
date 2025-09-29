@@ -225,7 +225,7 @@ export default function NyaayAI() {
           ),
           title: "Smart Document Drafting",
           description: "Generate legal documents like NDAs, MoUs, and contracts with AI precision tailored to Indian laws.",
-          link: "http://localhost:3000/generator"
+          link: "https://nyaay-ai-git-main-pranshu1312s-projects.vercel.app/generator"
         },
         {
           icon: (
@@ -235,7 +235,7 @@ export default function NyaayAI() {
           ),
           title: "Compliance Check",
           description: "Ensure your documents comply with Indian regulations like IT Act, Companies Act, and state-specific laws.",
-          link: "http://localhost:3000/compliance"
+          link: "https://nyaay-ai-git-main-pranshu1312s-projects.vercel.app/compliance"
         },
         {
           icon: (
@@ -245,7 +245,7 @@ export default function NyaayAI() {
           ),
           title: "Legal Documents Marketplace",
           description: "Access ready-to-use legal templates and documents for quick and reliable drafting.",
-          link: "http://localhost:3000/marketplace"
+          link: "https://nyaay-ai-git-main-pranshu1312s-projects.vercel.app/marketplace"
         }
       ].map((service, index) => (
         <a
