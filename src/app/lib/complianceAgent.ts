@@ -37,7 +37,7 @@ If the text is not a legal document or is nonsensical, return a complianceScore 
 export async function analyzeDocumentCompliance(documentText: string): Promise<any> {
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
+      model: "gemini-1.5-flash-latest",
       systemInstruction: systemPrompt,
       generationConfig: {
         responseMimeType: "application/json",
