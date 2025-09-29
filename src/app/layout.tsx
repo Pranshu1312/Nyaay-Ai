@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nyaan AI",
+  title: "Nyaay AI",
   description: "AI-Powered Legal Assistant",
 };
 
