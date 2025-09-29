@@ -93,5 +93,5 @@ text
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
   <p><strong>Made with ❤️ for accessible legal technology</strong></p>
-  <p>Made by Tanay Kumar, Pranshu Mangale & Neelay Machha</p>
+  <p>Made by Pranshu Mangale</p>
 </div>
