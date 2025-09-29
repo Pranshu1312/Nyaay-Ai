@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ComplianceItem } from '../types/compilance';
+import { ComplianceItem } from '@/types/compliance';
 
 // Mock compliance data - replace with actual API calls
 const initialComplianceItems: ComplianceItem[] = [
