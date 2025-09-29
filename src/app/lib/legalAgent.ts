@@ -14,7 +14,7 @@ import {
       };
   
       const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash-latest", // Use the latest model
+        model: "gemini-2.0-flash", // Use a supported model
         generationConfig,
         // **THE DEFINITIVE FIX: A hyper-aggressive instruction focusing on clean, semantic HTML.**
         systemInstruction: `You are an expert legal document generator. Your only job is to generate a complete, professional, and fully-written HTML document.
