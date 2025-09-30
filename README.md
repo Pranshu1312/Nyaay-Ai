@@ -1,6 +1,6 @@
 # Nyaay AI - Legal Document Analyzer & Generator
 
-##https://nyaay-ai-omega.vercel.app/
+## https://nyaay-ai-omega.vercel.app/
 
 ### 🏛️ AI-Powered Legal Assistant for Access to Justice
 
